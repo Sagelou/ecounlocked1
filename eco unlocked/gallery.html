@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" href="images/D1A61C1F-24BF-4A0C-A7C1-1B61C279AE9B (1).PNG" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Eco Unlocked</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+            
+                    <a href="index.html">Home</a>
+                    <a href="About us.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+         </div>
+              
+        </div>
+    </header>
+
+    <h3 class="leading"> Video Gallery</h3>
+
+    <div class="containers">
+
+        <div class="main-video-containers">
+           <video src="videos/instasave.MP4" loop controls class="main-video"></video>
+           <h3 class="main-vid-title">The Gatsby Brunch</h3>
+        </div>
+     
+        <div class="video-list-containers">
+     
+           <div class="list active">
+              <video src="videos/Davido Runs into Lil Baby at Icebox & Picks up $100K Pendant!.mp4" class="list-video"></video>
+              <h3 class="list-title">Davido Runs into Lil Baby at Icebox & Picks up $100K Pendant!</h3>
+           </div>
+     
+           <div class="list">
+              <video src="videos/Inside Burna Boy's Lagos Mansion _ Open Door _ Architectural Digest.mp4"class="list-video"></video>
+              <h3 class="list-title">Inside Burna Boy's Lagos Mansion </h3>
+           </div>
+     
+           <div class="list">
+              <video src="videos/videoplayback.mp4" class="list-video"></video>
+              <h3 class="list-title">Davido timeless concert</h3>
+           </div>
+     
+           <div class="list">
+              <video src="videos/Madonna Vs Sickick - Frozen (Fireboy DML Remix) [Official Music Video].mp4" class="list-video"></video>
+              <h3 class="list-title">Madonna Vs Sickick - Frozen (Fireboy DML Remix)</h3>
+           </div>
+     
+           <div class="list">
+              <video src="videos/10 Nigerian Celebrities Who Went Broke After Making Millions.mp4" class="list-video"></video>
+              <h3 class="list-title">10 Nigerian Celebrities Who Went Broke After Making Millions</h3>
+           </div>
+     
+           </div>
+     
+        </div>
+     
+     </div>
+
+     <footer>
+      <div class="kontainer">
+         <div class="ticker">
+           <div class="word"><h5>Latest News</h5></div>
+           <div class="news">
+               <marquee>
+                   <p>
+                     HARRY AND MEGHAN
+                     DEMAND PHOTO AGENCY GIVE THEM FOOTAGE OF 'CHASE'
+                     Agency Fires Back: You Can't Play By King's Rules!!!
+                   </p>
+                  <p>
+                     MADONNA
+                     I Got My "Frozen (Remix)"
+                     BY FINDING FIREBOY DML IN THE DMs!!!
+                  </p>
+                  <p>
+                     Actor Lance Reddick passed away in March due to heart disease
+                  </p>
+               </marquee>
+           </div>
+         </div>
+      </div>
+   </footer>
+  
+     
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation= document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+
+let videoList = document.querySelectorAll('.video-list-containers .list');
+
+videoList.forEach(vid =>{
+   vid.onclick = () =>{
+      videoList.forEach(remove =>{remove.classList.remove('active')});
+      vid.classList.add('active');
+      let src = vid.querySelector('.list-video').src;
+      let title = vid.querySelector('.list-title').innerHTML;
+      document.querySelector('.main-video-containers .main-video').src = src;
+      document.querySelector('.main-video-containers .main-video').play();
+      document.querySelector('.main-video-containers .main-vid-title').innerHTML = title;
+   };
+});
+        
+    </script>
+</body>
+</html>
